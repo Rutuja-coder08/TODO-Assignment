@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Todos App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css"
+        integrity="sha512-T584yQ/tdRR5QwOpfvDfVQUidzfgc2339Lc8uBDtcp/wYu80d7jwBgAxbyMh0a9YM9F8N3tdErpFI8iaGx6x5g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container">
+        <p class="text-center display-4">TO-DO App</p>
+
+        <div class="row">
+            <div class="col-6 offset-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="text-center">TODO's</h4>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <!-- title -->
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label for="todoTitle">Title</label>
+                                    </div>
+                                    <div class="col-8">
+                                        <input type="text" name="title" id="txtTitle" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- title -->
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label for="body">Body</label>
+                                    </div>
+                                    <div class="col-8">
+                                        <input type="text" name="body" id="txtBody" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- date -->
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label for="created-at">Created At :</label>
+                                    </div>
+                                    <div class="col-8">
+                                        <input type="date" min="2019-04-01" max="2022-12-31" name="created-at" id="created-at" class="form-control">
+                                    </div>
+                                </div>
+                             </div>   
+                            <!-- button -->
+                            <div class="row">
+                                <div class="col-8 offset-2">
+                                    <button type="button" id="btnAdd" class="btn btn-primary btn-block">
+                                        Add
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Display all items on UI -->
+        <ul id="list" class="list-group"></ul>
+
+    </div>
+    <script src="./build/app.js" type="module"></script>
+</body>
+
+</html>
