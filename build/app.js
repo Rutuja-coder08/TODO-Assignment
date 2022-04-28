@@ -5,6 +5,7 @@ window.onload = () => {
     const txtTitle = document.getElementById("txtTitle");
     const txtCreatedAt = document.getElementById("created-at");
     const txtBody = document.getElementById("txtBody");
+    const btnUpdate = document.getElementById("btnUpdate");
     //const btnDelete=document.getElementById("btnDelete") as HTMLButtonElement;
     const uList = document.getElementById("list");
     const renderList = new TodoTemplate(uList);
@@ -20,6 +21,13 @@ window.onload = () => {
         // console.log("the items",todo);
         doc = new TodoItem(todo);
         // console.log("the items",doc);
-        renderList.render("ToDo - " + txtTitle.value, doc);
+        renderList.render("" + txtTitle.value, doc);
     });
+    if (btnUpdate) {
+        console.log("clicked");
+        btnUpdate.addEventListener("click", (event) => {
+            event.preventDefault();
+            console.log("update");
+        });
+    }
 };

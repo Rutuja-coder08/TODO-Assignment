@@ -10,17 +10,20 @@ window.onload = () => {
     const txtTitle = document.getElementById("txtTitle") as HTMLInputElement;
     const txtCreatedAt = document.getElementById("created-at") as HTMLInputElement;
     const txtBody = document.getElementById("txtBody") as HTMLInputElement;
+    const btnUpdate = document.getElementById("btnUpdate") as HTMLButtonElement;
     //const btnDelete=document.getElementById("btnDelete") as HTMLButtonElement;
     const uList = document.getElementById("list") as HTMLUListElement;
     const renderList = new TodoTemplate(uList);
     let doc : HasFormatter;
-    btnAdd.addEventListener("click", (event : Event) => {
+    btnAdd.addEventListener("click", (event : Event) => 
+    {
         event.preventDefault();
        // console.log("the items")
         let todo : TodoType = {
             title : txtTitle.value,
             body : txtBody.value,
             createdAt : new Date(txtCreatedAt.value),
+            
         }
        // console.log("the items",todo);
        
@@ -29,8 +32,15 @@ window.onload = () => {
         
         // console.log("the items",doc);
          
-            renderList.render("ToDo - "+txtTitle.value, doc)
+            renderList.render(""+txtTitle.value, doc)
         })
-        
-        
+       
+
+        if(btnUpdate){
+            console.log("clicked")
+        btnUpdate.addEventListener("click", (event : Event) => {
+            event.preventDefault();
+            console.log("update");
+        })}
+    
 }

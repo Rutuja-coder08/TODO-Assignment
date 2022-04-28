@@ -25,7 +25,7 @@ export class TodoTemplate {
         const btnEdit =document.createElement("button");
         btnEdit.addEventListener("click", (event : Event) => {
             event.preventDefault();
-            console.log("Edit")   
+            console.log("Edit") 
             const label = document.createElement("LABEL");
             const yv = "New Title:";
             label.innerHTML = yv;
@@ -37,16 +37,20 @@ export class TodoTemplate {
             document.body.appendChild(input);   
             const btnUpdate =document.createElement("button");
             btnUpdate.innerHTML = "Update";
+            btnUpdate.setAttribute("id","btnUpdate");
             btnUpdate.setAttribute('class','btn btn-primary');
             btnUpdate.setAttribute('style','margin-right:16px');
             listItem.appendChild(btnUpdate);
 
              btnUpdate.addEventListener("click", (event:Event)=>{
-                 event.preventDefault();
+                 event.preventDefault(); 
                  console.log("Updated");
-                  
                 
-
+                 const txtNewTitle = document.getElementById("txtTitle") as HTMLInputElement;
+                 txtNewTitle.value= input.value;
+                 heading.innerHTML=txtNewTitle.value;
+                 document.body.removeChild(label);
+                 document.body.removeChild(input);
              })
 
 

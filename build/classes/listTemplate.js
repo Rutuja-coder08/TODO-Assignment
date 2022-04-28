@@ -33,12 +33,18 @@ export class TodoTemplate {
             document.body.appendChild(input);
             const btnUpdate = document.createElement("button");
             btnUpdate.innerHTML = "Update";
+            btnUpdate.setAttribute("id", "btnUpdate");
             btnUpdate.setAttribute('class', 'btn btn-primary');
             btnUpdate.setAttribute('style', 'margin-right:16px');
             listItem.appendChild(btnUpdate);
             btnUpdate.addEventListener("click", (event) => {
                 event.preventDefault();
                 console.log("Updated");
+                const txtNewTitle = document.getElementById("txtTitle");
+                txtNewTitle.value = input.value;
+                heading.innerHTML = txtNewTitle.value;
+                document.body.removeChild(label);
+                document.body.removeChild(input);
             });
         });
         btnEdit.innerHTML = "Edit";
